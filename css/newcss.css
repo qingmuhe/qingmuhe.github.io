@@ -1,0 +1,133 @@
+/* 最新文章图标 */
+.newPost {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    color: white;
+    padding: 0 12px;
+    background-color: #49b1f5;
+    box-shadow: 0 8px 12px -3px rgba(73,177,245, .20);
+    border-radius: 6px;
+    border: var(--style-border);
+    letter-spacing: 1px;
+  }
+  @media screen and (max-width:768px){
+    .newPost {
+          top: -20px;
+          right: 12px;
+          color: white;
+          padding: 0 12px;
+          border-radius: 6px;
+    }
+  }
+  
+/***************************** 分类页面样式 *****************************/
+#page .category-lists .category-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1%; /* 设置分类项之间的间距 */
+}
+
+#page .category-lists .category-list .category-list-item {
+  flex: 1 0 calc(20% - 1%); /* 初始宽度为每行五个，减去间距 */
+  margin-bottom: 1%; /* 底部间距 */
+  font-weight: 600;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
+  padding: 10px; /* 内边距 */
+}
+
+@media (max-width: 1024px) {
+  #page .category-lists .category-list .category-list-item {
+      flex-basis: calc(33.33% - 1%); /* 在较小屏幕下，每行三个 */
+  }
+}
+
+@media (max-width: 768px) {
+  #page .category-lists .category-list .category-list-item {
+      flex-basis: calc(50% - 1%); /* 在更小屏幕下，每行两个 */
+  }
+}
+
+@media (max-width: 480px) {
+  #page .category-lists .category-list .category-list-item {
+      flex-basis: 100%; /* 在最小屏幕下，每行一个 */
+  }
+}
+#page .category-lists .category-list .category-list-item .category-list-link::after {
+  content: "";
+  position: relative;
+  width: 0;
+  bottom: 0;
+  display: block;
+  height: 3px;
+  border-radius: 3px;
+  background: #fff; /* 为category-list-link添加hover效果的下划线 */
+}
+
+#page .category-lists .category-list .category-list-item .category-list-link:hover::after {
+  width: 60%;
+  left: 1%;
+  transition: all 0.6s; /* 添加下划线展开的过渡效果 */
+}
+
+#page .list-beauty li:before, .category-lists ul li:before {
+  border: #49b6f500;
+}
+#page .category-lists .category-list .category-list-item {
+  position: relative; /* 相对定位，以便子元素可以使用绝对定位 */
+  padding-top: 5px; /* 调整分类项顶部内边距，以容纳图标和数量 */
+}
+
+#page .category-lists .category-list .category-list-item .category-list-count {
+  position: absolute; /* 绝对定位 */
+  top: 0;
+  right: 0; /* 放置在右上角 */
+  color: #fff;
+  font-size: 1rem;
+  padding: 5px 10px; /* 调整内边距 */
+  display: flex; /* 使用 Flexbox 布局 */
+  align-items: center; /* 垂直居中对齐 */
+}
+
+#page .category-lists .category-list .category-list-item .category-list-count::before {
+  content: '📑'; /* "\f02d"Font Awesome 6 Free 的图标 */
+  padding-right: 10px; /* 调整图标与文章数量之间的距离 */
+  font-family: "Font Awesome 6 Free"; /* 使用 Font Awesome 6 Free 的字体 */
+}
+#page .category-lists .category-list .category-list-count:after {
+content: '';
+}
+
+/* 新增样式用于图标显示 */
+#page .category-lists .category-list .category-list-item .category-list-icon {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 5px; /* 调整图标与内容之间的水平距离 */
+}
+
+#post #article-container.post-content h1,
+#post #article-container.post-content h2,
+#post #article-container.post-content h3,
+#post #article-container.post-content h4,
+#post #article-container.post-content h5,
+#post #article-container.post-content h6 {
+padding-left: 0 !important; 
+}
+
+#post #article-container.post-content h1::before,
+#post #article-container.post-content h2::before,
+#post #article-container.post-content h3::before,
+#post #article-container.post-content h4::before,
+#post #article-container.post-content h5::before,
+#post #article-container.post-content h6::before {
+position: relative;
+content: attr(data-toc) ' ';
+display: inline;
+font-family: inherit;
+font-size: inherit;
+line-height: inherit;
+margin-left: 0;
+}
+/***************************** 分类页面样式 *****************************/
